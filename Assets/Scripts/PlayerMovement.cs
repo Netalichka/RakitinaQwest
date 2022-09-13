@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float _speed;
 
-    [SerializeField] private Vector3 direction;
+    [SerializeField] private Vector3 _direction;
 
     
     void Update()
     {
-        direction.x = Input.GetAxis("Horizontal");
-        direction.z = Input.GetAxis("Vertical");
+        _direction .x = Input.GetAxis("Horizontal");
+        _direction.z = Input.GetAxis("Vertical");
 
     }
     private void FixedUpdate()
     {
-        Vector3 speed = direction * speed * Time.deltaTime;
+        Vector3 speed = _direction * _speed * Time.deltaTime;
         transform.Translate(speed);
     }
 }
